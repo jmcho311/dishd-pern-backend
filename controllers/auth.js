@@ -39,8 +39,22 @@ const logout = (req, res) => {
   res.json({ message: "User logged out" })
 }
 
+const index = (req, res) => {
+  db.user.findAll({
+    where: {
+      id: req.params.id
+    }
+  }).then((foundUser) => {
+    if(!foundUser) return res.json({
+      message: 'No Users found in database.'
+    })
+    res.json({ user: foundUser })
+  })
+}
+
 module.exports = {
   login,
   register,
-  logout
+  logout,
+  index
 }

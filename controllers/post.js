@@ -1,12 +1,11 @@
 const db = require('../models')
 const { Op } = require('sequelize')
 // const axios = require('axios')
-// const express = require('express')
 
 
 const index = (req, res) => {
     db.post.findAll().then((foundPosts) => {
-        res.json({ posts: foundPosts})
+        res.status(200).json({ posts: foundPosts})
     })
 }
 
@@ -14,29 +13,30 @@ const show = (req, res) => {
     db.post.findAll({
         where: {
             category: {
-                [Op.iLike]: `${ req.params.category }`
+                [Op.iLike]: `${ req.params.category }` // this does not like string of multiple words, only works for single word name
             }
         }
     }).then((foundPosts) => {
         if(!foundPosts) return res.json({
             message: 'Posts with selected category not found.'
         })
-        res.json({ posts: foundPosts })
+        res.status(200).json({ posts: foundPosts })
     })
 }
 
 const showLocation = (req, res) => {
+    console.log("************************")
     db.post.findAll({
         where: {
-            name: {
-                [Op.iLike]: `${ req.params.name }`
+            locationName: {
+                [Op.iLike]: `${ req.params.locationName }` // this does not like string of multiple words, only works for single word name
             }
         }
     }).then((foundPosts) => {
         if(!foundPosts) return res.json({
             message: 'Posts with selected Location Name not found.'
         })
-        res.json({ posts: foundPosts })
+        res.status(200).json({ posts: foundPosts })
     })
 }
 
@@ -49,7 +49,7 @@ const showPost = (req, res) => {
         if(!foundPosts) return res.json({
             message: 'Posts with selected user not found.'
         })
-        res.json({ posts: foundPosts })
+        res.status(200).json({ posts: foundPosts })
     })
 }
 

@@ -27,6 +27,30 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        userId: 1,
+        photo: 'https://imgur.com/a/llLPFdY',
+        locationName: 'Kitanda',
+        city: 'Seattle',
+        state: 'WA',
+        category: 'Sandwich',
+        dishName: 'Pastrami Spinach and Cheese',
+        body: 'Gluten-free cheese bread sandwiches. This one is my go-to.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        userId: 2,
+        photo: 'https://imgur.com/a/5NAH1pg',
+        locationName: 'Kitanda',
+        city: 'Seattle',
+        state: 'WA',
+        category: 'Acai',
+        dishName: 'Enery Blast Acai Bowl',
+        body: 'Pretty close to Hawaii. I could eat this every day.',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ])
   },
 
