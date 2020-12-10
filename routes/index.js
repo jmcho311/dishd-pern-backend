@@ -1,3 +1,6 @@
+const { post } = require('./auth');
+
 module.exports = {
-    auth: require('./auth')
+    auth: require('./auth'),
+    // post: require('./post')
 }

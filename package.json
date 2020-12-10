@@ -14,5 +14,20 @@
     "passport-local": "^1.0.0",
     "pg": "^8.4.2",
     "sequelize": "^6.3.5"
-  }
+  },
+  "name": "dishd-pern-backend",
+  "description": "> Note: Authenticated /w Passport",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmcho311/dishd-pern-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmcho311/dishd-pern-backend/issues"
+  },
+  "homepage": "https://github.com/jmcho311/dishd-pern-backend#readme"
 }
