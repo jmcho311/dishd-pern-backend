@@ -44,7 +44,7 @@ app.use(passport.session())
 
 // middleware - API routes
 app.use('/api/v1/auth', routes.auth)
-// app.use('api/v1/post', routes.post)
+app.use('api/v1/post', routes.post)
 
 // connection
 app.listen(port, () => console.log(`Server is running on port ${port}`))
