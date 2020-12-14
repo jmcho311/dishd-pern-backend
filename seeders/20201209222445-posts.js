@@ -5,7 +5,7 @@ module.exports = {
     const bulkPosts = await queryInterface.bulkInsert('posts', [
       {
         userId: 1,
-        photo: 'https://imgur.com/a/l7QFXUv',
+        photo: 'https://i.imgur.com/RWDyg9K.jpg',
         locationName: 'Milk Drunk',
         city: 'Seattle',
         state: 'WA',
@@ -17,7 +17,7 @@ module.exports = {
       },
       {
         userId: 2,
-        photo: 'https://imgur.com/a/Hkg1kzR',
+        photo: 'https://i.imgur.com/zJH20Z4.jpg',
         locationName: 'Milk Drunk',
         city: 'Seattle',
         state: 'WA',
@@ -29,7 +29,7 @@ module.exports = {
       },
       {
         userId: 1,
-        photo: 'https://imgur.com/a/llLPFdY',
+        photo: 'https://i.imgur.com/9p2W0CZ.jpg',
         locationName: 'Kitanda',
         city: 'Seattle',
         state: 'WA',
@@ -41,7 +41,7 @@ module.exports = {
       },
       {
         userId: 2,
-        photo: 'https://imgur.com/a/5NAH1pg',
+        photo: 'https://i.imgur.com/gHTVXMC.jpg',
         locationName: 'Kitanda',
         city: 'Seattle',
         state: 'WA',

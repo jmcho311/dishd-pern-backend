@@ -10,6 +10,8 @@ const index = (req, res) => {
 }
 
 const show = (req, res) => {
+    console.log(req.params.category)
+    // console.log(foundPosts)
     db.post.findAll({
         where: {
             category: {
@@ -21,6 +23,7 @@ const show = (req, res) => {
             message: 'Posts with selected category not found.'
         })
         res.status(200).json({ posts: foundPosts })
+        console.log(foundPosts)
     })
 }
 
@@ -35,6 +38,22 @@ const showLocation = (req, res) => {
     }).then((foundPosts) => {
         if(!foundPosts) return res.json({
             message: 'Posts with selected Location Name not found.'
+        })
+        res.status(200).json({ posts: foundPosts })
+    })
+}
+
+const showDish = (req, res) => {
+    console.log('🍌')
+    db.post.findAll({
+        where: {
+            dishName: {
+                [Op.iLike]: `${ req.params.dishName }`
+            }
+        }
+    }).then((foundPosts) => {
+        if(!foundPosts) return res.json({
+            message: 'Posts with seleced Dish Name not found.'
         })
         res.status(200).json({ posts: foundPosts })
     })
@@ -93,6 +112,7 @@ module.exports = {
     index,
     show,
     showLocation,
+    showDish,
     showPost,
     create,
     update,
