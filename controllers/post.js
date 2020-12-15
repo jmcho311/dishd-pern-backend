@@ -63,7 +63,8 @@ const showPost = (req, res) => {
     db.post.findAll({
         where: {
             userId: req.params.id
-        }
+        },
+        order: [['id', 'DESC']]
     }).then((foundPosts) => {
         if(!foundPosts) return res.json({
             message: 'Posts with selected user not found.'
@@ -79,7 +80,7 @@ const create = (req, res) => {
 }
 
 const update = (req, res) => {
-    console.log(req.body)
+    console.log(req.params.id)
     db.post.update({
         ...req.body
     }, {
