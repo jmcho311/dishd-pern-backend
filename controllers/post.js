@@ -10,7 +10,7 @@ const index = (req, res) => {
 }
 
 const show = (req, res) => {
-    console.log(req.params.category)
+    // console.log(req.params.category)
     // console.log(foundPosts)
     db.post.findAll({
         where: {
@@ -23,12 +23,12 @@ const show = (req, res) => {
             message: 'Posts with selected category not found.'
         })
         res.status(200).json({ posts: foundPosts })
-        console.log(foundPosts)
+        // console.log(foundPosts)
     })
 }
 
 const showLocation = (req, res) => {
-    console.log("************************")
+    // console.log("************************")
     db.post.findAll({
         where: {
             locationName: {
@@ -44,7 +44,7 @@ const showLocation = (req, res) => {
 }
 
 const showDish = (req, res) => {
-    console.log('🍌')
+    // console.log('🍌')
     db.post.findAll({
         where: {
             dishName: {
@@ -80,7 +80,7 @@ const create = (req, res) => {
 }
 
 const update = (req, res) => {
-    console.log(req.params.id)
+    // console.log(req.params.id)
     db.post.update({
         ...req.body
     }, {
